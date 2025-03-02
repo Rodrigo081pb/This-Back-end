@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTech - Gestão de Colaboradores</title>
+  <!-- Importa o CSS -->
+  <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body>
+  <header>
+    <!-- Logo em estilo "pixação/graffiti" -->
+    <h1 class="logo">EcoTech</h1>
+  </header>
+
+  <main>
+    <!-- Botão para abrir o formulário de criação -->
+    <div class="create-container">
+      <button id="openCreateFormBtn" class="create-btn">Criar Novo Colaborador</button>
+    </div>
+
+    <!-- Seção de colaboradores (lista) -->
+    <section id="colaboradores">
+      <h2>Colaboradores</h2>
+      <div id="lista-colaboradores" class="lista-colaboradores">
+        <!-- Cards serão gerados via JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de criação -->
+  <div id="createModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeCreateModal">&times;</span>
+      <h2>Criar Novo Colaborador</h2>
+      <form id="createForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" required>
+
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" name="dataNascimento" required>
+
+        <label for="cargo">Cargo:</label>
+        <input type="text" id="cargo" name="cargo" required>
+
+        <label for="filial">Código da Filial:</label>
+        <input type="number" id="filial" name="filial" required>
+
+        <label for="fotoInput">Deseja inserir uma foto?</label>
+        <div class="drag-area" id="dragArea">
+          <p>Arraste e solte a foto aqui ou clique para selecionar</p>
+          <input type="file" id="fotoInput" accept="image/*" hidden>
+        </div>
+
+        <button type="submit" class="submit-btn">Cadastrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de edição -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeEditModal">&times;</span>
+      <h2>Editar Colaborador</h2>
+      <form id="editForm">
+        <input type="hidden" id="editId">
+
+        <label for="editNome">Nome:</label>
+        <input type="text" id="editNome" name="editNome" required>
+
+        <label for="editIdade">Idade:</label>
+        <input type="number" id="editIdade" name="editIdade" required>
+
+        <label for="editDataNascimento">Data de Nascimento:</label>
+        <input type="date" id="editDataNascimento" name="editDataNascimento" required>
+
+        <label for="editCargo">Cargo:</label>
+        <input type="text" id="editCargo" name="editCargo" required>
+
+        <label for="editFilial">Código da Filial:</label>
+        <input type="number" id="editFilial" name="editFilial" required>
+
+        <label for="editFotoInput">Alterar foto?</label>
+        <div class="drag-area" id="dragAreaEdit">
+          <p>Arraste e solte a foto aqui ou clique para selecionar</p>
+          <input type="file" id="editFotoInput" accept="image/*" hidden>
+        </div>
+
+        <button type="submit" class="submit-btn">Salvar Alterações</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de confirmação de deleção -->
+  <div id="deleteModal" class="modal">
+    <div class="modal-content confirm-content">
+      <h2>Você deseja demitir este funcionário?</h2>
+      <div class="confirm-buttons">
+        <button id="confirmDeleteBtn" class="delete-confirm">Sim</button>
+        <button id="cancelDeleteBtn" class="cancel-confirm">Não</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/index.js"></script>
+</body>
+</html>

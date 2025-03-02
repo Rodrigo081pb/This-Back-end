@@ -1,0 +1,267 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000;
+    color: #0f0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    padding: 20px;
+  }
+  
+  /* Logo estilo “pixação/graffiti” */
+  .logo {
+    font-size: 3em;
+    color: #0f0;
+    text-align: center;
+    margin-bottom: 20px;
+    /* Simulando borda branca (efeito stroke) */
+    text-shadow: 
+      -1px -1px 0 #fff,  
+      1px -1px 0 #fff,
+      -1px 1px 0 #fff,
+      1px 1px 0 #fff,
+      0 0 10px #0f0;
+    font-family: Impact, sans-serif;
+    letter-spacing: 2px;
+  }
+  
+  /* Botão "Criar Novo Colaborador" */
+  .create-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .create-btn {
+    background-color: transparent;
+    color: #0f0;
+    border: 2px solid #0f0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.1em;
+  }
+  
+  .create-btn:hover {
+    background-color: #00f; /* Azul */
+    color: #fff;
+    border-color: #0f0; /* Borda continua verde */
+  }
+  
+  /* Seção de colaboradores */
+  #colaboradores {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  
+  #colaboradores h2 {
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #0f0;
+  }
+  
+  /* Lista de cards */
+  .lista-colaboradores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Card de cada colaborador */
+  .card {
+    background-color: #111;
+    border: 1px solid #0f0;
+    border-radius: 8px;
+    width: 250px;
+    padding: 15px;
+    box-shadow: 0 0 5px #0f0;
+    position: relative;
+  }
+  
+  .card-img {
+    display: block;
+    margin: 0 auto 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0f0;
+  }
+  
+  .card h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    margin: 5px 0;
+  }
+  
+  /* Ícones de editar e deletar */
+  .icon-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .icon {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    fill: #0f0;
+    transition: transform 0.2s;
+  }
+  
+  .icon:hover {
+    transform: scale(1.2);
+    fill: #00f;
+  }
+  
+  /* Modal (criação, edição, deleção) */
+  .modal {
+    display: none; /* oculto por padrão */
+    position: fixed; 
+    z-index: 999; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
+  }
+  
+  .modal-content {
+    background-color: #111;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #0f0;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+  }
+  
+  .close {
+    color: #0f0;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+  
+  .close:hover {
+    color: #f00;
+  }
+  
+  /* Formulários nos modais */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"] {
+    padding: 8px;
+    background-color: #222;
+    border: 1px solid #0f0;
+    border-radius: 4px;
+    color: #0f0;
+  }
+  
+  .submit-btn {
+    background-color: transparent;
+    color: #0f0;
+    border: 2px solid #0f0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #00f;
+    color: #fff;
+  }
+  
+  /* Área de drag and drop */
+  .drag-area {
+    border: 2px dashed #0f0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .drag-area.hover {
+    background-color: #222;
+  }
+  
+  /* Modal de confirmação */
+  .confirm-content {
+    text-align: center;
+  }
+  
+  .confirm-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .delete-confirm {
+    background-color: #f00;
+    color: #fff;
+    border: 2px solid #f00;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-confirm:hover {
+    background-color: #fff;
+    color: #f00;
+  }
+  
+  .cancel-confirm {
+    background-color: transparent;
+    color: #0f0;
+    border: 2px solid #0f0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel-confirm:hover {
+    background-color: #0f0;
+    color: #000;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 600px) {
+    .lista-colaboradores {
+      justify-content: center;
+    }
+    .card {
+      width: 90%;
+      max-width: 300px;
+    }
+  }
+  
