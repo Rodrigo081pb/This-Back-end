@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EcoTech - Gestão de Colaboradores</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./assets/css/global.css">
 </head>
 <body>
   <header>
@@ -19,13 +19,18 @@
   </header>
 
   <main>
-    <!-- Home Section -->
+    <!-- Home Section com Dashboard -->
     <section id="homeSection" class="section">
       <h2>Bem-vindo à EcoTech</h2>
-      <p>Dashboard com estatísticas dos colaboradores, informações gerais e gráficos (em breve).</p>
+      <p>Confira as estatísticas dos colaboradores em nosso Dashboard:</p>
+      <div id="dashboard" class="dashboard">
+        <div class="dashboard-card" id="totalColaboradores"></div>
+        <div class="dashboard-card" id="mediaIdade"></div>
+        <div class="dashboard-card" id="departamentos"></div>
+      </div>
     </section>
 
-    <!-- Admin Section -->
+    <!-- Admin Section com CRUD -->
     <section id="adminSection" class="section" style="display:none;">
       <div class="create-container">
         <button id="openCreateFormBtn" class="create-btn">Criar Novo Colaborador</button>
@@ -38,10 +43,14 @@
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section com informações ampliadas -->
     <section id="aboutSection" class="section" style="display:none;">
       <h2>Sobre EcoTech</h2>
-      <p>EcoTech é uma plataforma inovadora para gestão de colaboradores. Desenvolvida com tecnologias modernas, oferece uma experiência intuitiva e completa para acompanhar e gerenciar os colaboradores de sua empresa.</p>
+      <p>EcoTech é uma plataforma inovadora para gestão de colaboradores, desenvolvida com tecnologias modernas e um design intuitivo, que facilita o acompanhamento e a administração dos colaboradores da sua empresa.</p>
+      <h3>Missão</h3>
+      <p>Proporcionar soluções inteligentes e sustentáveis para a gestão de pessoas, otimizando processos e promovendo o desenvolvimento humano.</p>
+      <h3>Visão</h3>
+      <p>Ser referência em inovação e tecnologia aplicada à gestão de colaboradores, integrando dados e proporcionando decisões estratégicas.</p>
     </section>
   </main>
 
@@ -56,6 +65,44 @@
 
         <label for="dataNascimento">Data de Nascimento:</label>
         <input type="date" id="dataNascimento" name="dataNascimento" required>
+
+        <label for="naturalidade">Naturalidade:</label>
+        <input type="text" id="naturalidade" name="naturalidade" required>
+
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado" required>
+          <option value="">Selecione um estado</option>
+          <option value="AC">Acre</option>
+          <option value="AL">Alagoas</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="GO">Goiás</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="RO">Rondônia</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Tocantins</option>
+        </select>
+
+        <label for="pais">País:</label>
+        <input type="text" id="pais" name="pais" value="Brasil" required>
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email">
@@ -100,6 +147,44 @@
         <label for="editDataNascimento">Data de Nascimento:</label>
         <input type="date" id="editDataNascimento" name="editDataNascimento" required>
 
+        <label for="editNaturalidade">Naturalidade:</label>
+        <input type="text" id="editNaturalidade" name="editNaturalidade" required>
+
+        <label for="editEstado">Estado:</label>
+        <select id="editEstado" name="editEstado" required>
+          <option value="">Selecione um estado</option>
+          <option value="AC">Acre</option>
+          <option value="AL">Alagoas</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="GO">Goiás</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="RO">Rondônia</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Tocantins</option>
+        </select>
+
+        <label for="editPais">País:</label>
+        <input type="text" id="editPais" name="editPais" value="Brasil" required>
+
         <label for="editEmail">Email:</label>
         <input type="email" id="editEmail" name="editEmail">
 
@@ -140,6 +225,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="./assets/js/index.js"></script>
 </body>
 </html>
