@@ -2,372 +2,374 @@
    RESET
 ---------------------------------------------------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #121212, #1f1f1f);
-    color: #eee;
-    min-height: 100%;
-  }
-  
-  /* ----------------------------------------------------
-     CABEÇALHO & NAVEGAÇÃO
-  ---------------------------------------------------- */
-  header {
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .logo {
-    font-size: 2.5rem;
-    color: #1DB954;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(29, 185, 84, 0.6);
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
-  }
-  
-  .nav-links li a {
-    color: #eee;
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 20px;
-    transition: background 0.3s;
-  }
-  
-  .nav-links li a:hover {
-    background: rgba(29, 185, 84, 0.2);
-  }
-  
-  /* ----------------------------------------------------
-     SEÇÕES
-  ---------------------------------------------------- */
-  .section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 1100px;
-  }
-  
-  .section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #1DB954;
-    text-shadow: 0 0 6px rgba(29, 185, 84, 0.5);
-  }
-  
-  .section p {
-    margin-bottom: 15px;
-  }
-  
-  /* ----------------------------------------------------
-     DASHBOARD (Home)
-  ---------------------------------------------------- */
-  .dashboard {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-    justify-content: space-around;
-  }
-  
-  .dashboard-card {
-    background: rgba(29,185,84, 0.1);
-    border: 1px solid rgba(29,185,84, 0.5);
-    border-radius: 10px;
-    padding: 20px;
-    width: 250px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    transition: transform 0.2s;
-  }
-  
-  .dashboard-card:hover {
-    transform: translateY(-2px);
-  }
-  
-  .dashboard-card h3 {
-    color: #1DB954;
-    margin-bottom: 10px;
-  }
-  
-  .dashboard-card p {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  /* ----------------------------------------------------
-     BOTÃO "CRIAR NOVO COLABORADOR"
-  ---------------------------------------------------- */
-  .create-container {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .create-btn {
-    background: transparent;
-    color: #1DB954;
-    border: 2px solid #1DB954;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s, color 0.3s;
-  }
-  
-  .create-btn:hover {
-    background: #1DB954;
-    color: #fff;
-  }
-  
-  /* ----------------------------------------------------
-     LISTA DE COLABORADORES & CARDS
-  ---------------------------------------------------- */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #121212, #1f1f1f);
+  color: #eee;
+  min-height: 100%;
+}
+
+/* ----------------------------------------------------
+   CABEÇALHO & NAVEGAÇÃO
+---------------------------------------------------- */
+header {
+  /* Alinhando logo à esquerda e nav à direita */
+  display: flex;
+  justify-content: space-between; /* separa logo e menu */
+  align-items: center;           /* alinha verticalmente */
+  padding: 20px 40px;            /* espaçamento horizontal maior */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: #1DB954;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(29, 185, 84, 0.6);
+}
+
+/* Retira o text-align center e permite que o menu vá para a direita */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0; /* remove margin-top */
+}
+
+.nav-links li a {
+  color: #eee;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+  background: rgba(29, 185, 84, 0.2);
+}
+
+/* ----------------------------------------------------
+   SEÇÕES
+---------------------------------------------------- */
+.section {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1100px;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #1DB954;
+  text-shadow: 0 0 6px rgba(29, 185, 84, 0.5);
+}
+
+.section p {
+  margin-bottom: 15px;
+}
+
+/* ----------------------------------------------------
+   DASHBOARD (Home)
+---------------------------------------------------- */
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: space-around;
+}
+
+.dashboard-card {
+  background: rgba(29,185,84, 0.1);
+  border: 1px solid rgba(29,185,84, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-2px);
+}
+
+.dashboard-card h3 {
+  color: #1DB954;
+  margin-bottom: 10px;
+}
+
+.dashboard-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* ----------------------------------------------------
+   BOTÃO "CRIAR NOVO COLABORADOR"
+---------------------------------------------------- */
+.create-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.create-btn {
+  background: transparent;
+  color: #1DB954;
+  border: 2px solid #1DB954;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.create-btn:hover {
+  background: #1DB954;
+  color: #fff;
+}
+
+/* ----------------------------------------------------
+   LISTA DE COLABORADORES & CARDS
+---------------------------------------------------- */
+.lista-colaboradores {
+  /* Grid de 4 colunas para exibir os cards */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(29, 185, 84, 0.2);
+  border-radius: 10px;
+  width: 260px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1DB954;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.card h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin: 5px 0;
+}
+
+/* Ícones de Edição e Deleção */
+.icon-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: #1DB954;
+  cursor: pointer;
+  transition: transform 0.3s, fill 0.3s;
+}
+
+.icon:hover {
+  fill: #fff;
+  transform: scale(1.15);
+}
+
+/* ----------------------------------------------------
+   MODAIS
+---------------------------------------------------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+.modal-content {
+  background: #2a2a2a;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #1DB954;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #1DB954;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+.confirm-content {
+  text-align: center;
+}
+
+.confirm-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.delete-confirm {
+  background: #ff3b3b;
+  color: #fff;
+  border: 2px solid #ff3b3b;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.delete-confirm:hover {
+  background: #fff;
+  color: #ff3b3b;
+}
+
+.cancel-confirm {
+  background: transparent;
+  color: #1DB954;
+  border: 2px solid #1DB954;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cancel-confirm:hover {
+  background: #1DB954;
+  color: #fff;
+}
+
+/* ----------------------------------------------------
+   FORMULÁRIOS (MODAIS)
+---------------------------------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+label {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #1DB954;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+select {
+  padding: 10px;
+  background: #1f1f1f;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #eee;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #1DB954;
+}
+
+.submit-btn {
+  background: transparent;
+  color: #1DB954;
+  border: 2px solid #1DB954;
+  padding: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  font-size: 1rem;
+}
+
+.submit-btn:hover {
+  background: #1DB954;
+  color: #fff;
+}
+
+/* ----------------------------------------------------
+   ÁREA DE DRAG & DROP
+---------------------------------------------------- */
+.drag-area {
+  border: 2px dashed #444;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.drag-area p {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.drag-area.hover {
+  border-color: #1DB954;
+}
+
+/* ----------------------------------------------------
+   RESPONSIVIDADE
+---------------------------------------------------- */
+@media (max-width: 600px) {
+  /* Em telas muito pequenas, ainda usamos 1 card por linha */
   .lista-colaboradores {
-    /* Antes era flex, agora usamos Grid para 4 colunas */
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    justify-items: center; /* centraliza os cards em cada coluna */
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
-  
-  .card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(29, 185, 84, 0.2);
-    border-radius: 10px;
-    width: 260px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    position: relative;
-    transition: transform 0.2s;
-  }
-  
-  .card:hover {
-    transform: translateY(-2px);
-  }
-  
-  .card-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #1DB954;
-    display: block;
-    margin: 0 auto 10px;
-  }
-  
-  .card h3 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-    color: #fff;
-  }
-  
-  .card p {
-    font-size: 0.95rem;
-    margin: 5px 0;
-  }
-  
-  /* Ícones de Edição e Deleção */
-  .icon-container {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-  
-  .icon {
-    width: 24px;
-    height: 24px;
-    fill: #1DB954;
-    cursor: pointer;
-    transition: transform 0.3s, fill 0.3s;
-  }
-  
-  .icon:hover {
-    fill: #fff;
-    transform: scale(1.15);
-  }
-  
-  /* ----------------------------------------------------
-     MODAIS
-  ---------------------------------------------------- */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    overflow: auto;
-  }
-  
-  .modal-content {
-    background: #2a2a2a;
-    margin: 100px auto;
-    padding: 20px;
-    border: 1px solid #1DB954;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  }
-  
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 1.5rem;
-    color: #1DB954;
-    cursor: pointer;
-  }
-  
-  .close:hover {
-    color: #fff;
-  }
-  
-  .confirm-content {
-    text-align: center;
-  }
-  
+
   .confirm-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .delete-confirm {
-    background: #ff3b3b;
-    color: #fff;
-    border: 2px solid #ff3b3b;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .delete-confirm:hover {
-    background: #fff;
-    color: #ff3b3b;
-  }
-  
-  .cancel-confirm {
-    background: transparent;
-    color: #1DB954;
-    border: 2px solid #1DB954;
-    padding: 10px 20px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .cancel-confirm:hover {
-    background: #1DB954;
-    color: #fff;
-  }
-  
-  /* ----------------------------------------------------
-     FORMULÁRIOS (MODAIS)
-  ---------------------------------------------------- */
-  form {
-    display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 30px;
   }
-  
-  label {
-    font-weight: 500;
-    font-size: 1rem;
-    color: #1DB954;
-  }
-  
-  input[type="text"],
-  input[type="number"],
-  input[type="date"],
-  input[type="email"],
-  input[type="tel"],
-  select {
-    padding: 10px;
-    background: #1f1f1f;
-    border: 1px solid #444;
-    border-radius: 5px;
-    color: #eee;
-    font-size: 0.95rem;
-    outline: none;
-  }
-  
-  input:focus, select:focus {
-    border-color: #1DB954;
-  }
-  
-  .submit-btn {
-    background: transparent;
-    color: #1DB954;
-    border: 2px solid #1DB954;
-    padding: 10px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-    font-size: 1rem;
-  }
-  
-  .submit-btn:hover {
-    background: #1DB954;
-    color: #fff;
-  }
-  
-  /* ----------------------------------------------------
-     ÁREA DE DRAG & DROP
-  ---------------------------------------------------- */
-  .drag-area {
-    border: 2px dashed #444;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: border-color 0.3s;
-  }
-  
-  .drag-area p {
-    color: #888;
-    font-size: 0.9rem;
-  }
-  
-  .drag-area.hover {
-    border-color: #1DB954;
-  }
-  
-  /* ----------------------------------------------------
-     RESPONSIVIDADE
-  ---------------------------------------------------- */
-  @media (max-width: 600px) {
-    /* Em telas muito pequenas, ainda usamos 1 card por linha */
-    .lista-colaboradores {
-      grid-template-columns: 1fr;
-      justify-items: center;
-    }
-  
-    .confirm-buttons {
-      flex-direction: column;
-    }
-  }
-  
+}
