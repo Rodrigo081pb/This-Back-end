@@ -1,5 +1,5 @@
 const API_URL = "https://67b7d4e42bddacfb271012ce.mockapi.io/api/v1/funcionarios";
-const DEFAULT_PHOTO = "https://cdn-icons-png.flaticon.com/512/847/847969.png";
+const DEFAULT_PHOTO = print("No Image")
 
 // Navegação entre seções
 const homeSection = document.getElementById("homeSection");
@@ -22,11 +22,10 @@ document.getElementById("aboutLink").addEventListener("click", () => {
   aboutSection.style.display = "block";
 });
 
-// Funções utilitárias para formatação de datas e cálculo de idade
 function formatarData(isoString) {
-  if (!isoString) return "N/D";
+  if (!isoString) return "Não Informado";
   const date = new Date(isoString);
-  if (isNaN(date.getTime())) return "N/D";
+  if (isNaN(date.getTime())) return "Não informado";
   const dia = String(date.getDate()).padStart(2, "0");
   const mes = String(date.getMonth() + 1).padStart(2, "0");
   const ano = date.getFullYear();
@@ -34,9 +33,9 @@ function formatarData(isoString) {
 }
 
 function calcularIdade(isoString) {
-  if (!isoString) return "N/D";
+  if (!isoString) return "Não informado";
   const nascimento = new Date(isoString);
-  if (isNaN(nascimento.getTime())) return "N/D";
+  if (isNaN(nascimento.getTime())) return "Não informado";
   const hoje = new Date();
   let idade = hoje.getFullYear() - nascimento.getFullYear();
   const mes = hoje.getMonth() - nascimento.getMonth();
@@ -130,7 +129,7 @@ editFotoInput.addEventListener("change", (e) => {
   }
 });
 
-// Função para converter arquivo para Base64
+// Função para converter arquivo para Base64 para alimentar a api com a imagem
 function handleFile(file, callback) {
   const reader = new FileReader();
   reader.onload = function(evt) {
@@ -139,7 +138,7 @@ function handleFile(file, callback) {
   reader.readAsDataURL(file);
 }
 
-// Submissão do formulário de criação
+// Submissão do formulário para criação de funcionário
 createForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const nome = document.getElementById("nome").value.trim();
@@ -193,7 +192,7 @@ createForm.addEventListener("submit", async (e) => {
   }
 });
 
-// Função para listar colaboradores e atualizar dashboard
+// Função para listar colaboradores e atualizar o dashboard
 async function listarColaboradores() {
   try {
     const response = await fetch(API_URL);
@@ -275,7 +274,7 @@ function updateDashboard(colaboradores) {
       countIdades++;
     }
   });
-  const mediaIdade = countIdades > 0 ? (somaIdades / countIdades).toFixed(1) : "N/D";
+  const mediaIdade = countIdades > 0 ? (somaIdades / countIdades).toFixed(1) : "Não informado";
   document.getElementById("mediaIdade").innerHTML = `<h3>Média de Idade</h3><p>${mediaIdade}</p>`;
 
   // Contagem por Departamento
